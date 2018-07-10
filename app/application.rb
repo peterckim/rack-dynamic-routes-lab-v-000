@@ -6,9 +6,9 @@ class Application
     req = Rack::Request.new(env)
     
     if req.path.match(/items/)
-      item_name = req.path.split("/songs/").last
+      item_name = req.path.split("/items/").last
       @@items.each do |item|
-        if item.name = item_to_add
+        if item.name = item_name
           return item.price
         end
       end
