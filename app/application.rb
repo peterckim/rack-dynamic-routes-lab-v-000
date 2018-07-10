@@ -8,7 +8,8 @@ class Application
       
       if Item.all.include?(item_name)
         item = Item.all.find do |i|
-           i.name == item_name
+          i.name == item_name
+        end
           resp.write "#{i.price}"
           resp.status = 200
           return
