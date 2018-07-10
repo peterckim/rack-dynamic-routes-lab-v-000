@@ -8,7 +8,7 @@ class Application
       Item.all.find do |i|
         if i.name == item_name
           resp.write "#{i.price}"
-          resp.status = 
+          resp.status = 200
         end
       end
       resp.write "Item not found"
