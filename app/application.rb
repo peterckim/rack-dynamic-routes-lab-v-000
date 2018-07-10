@@ -9,6 +9,7 @@ class Application
         if i.name == item_name
           resp.write "#{i.price}"
           resp.status = 200
+          return
         end
       end
       resp.write "Item not found"
