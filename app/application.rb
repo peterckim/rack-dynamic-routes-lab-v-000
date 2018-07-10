@@ -5,8 +5,10 @@ class Application
     
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      Item.all.find do |i|
-        if i.name == item_name
+      
+      if Item.all.include?(item_name)
+        Item.all.find do |i|
+           i.name == item_name
           resp.write "#{i.price}"
           resp.status = 200
           return
